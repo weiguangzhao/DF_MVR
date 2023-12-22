@@ -10,6 +10,7 @@ import torch
 import torch.optim as optim
 import numpy as np
 import random
+import shutil
 from math import cos, pi
 from tensorboardX import SummaryWriter
 import matplotlib.pyplot as plt
@@ -32,7 +33,7 @@ def cosine_lr_after_step(optimizer, base_lr, epoch, step_epoch, total_epochs, cl
 
 
 # #val_set visual
-def vis_pred(render_img, lm_68n_pre, lm_68n, front_raw, fn_1):
+def vis_pred(render_img, lm_68n_pre, lm_68n, front_raw, fn_1, epoch):
     # # plt
     render_image_plt = render_img.detach().cpu().numpy()
     keypoint_face_pre_plt = lm_68n_pre.detach().cpu().numpy()
@@ -54,7 +55,7 @@ def vis_pred(render_img, lm_68n_pre, lm_68n, front_raw, fn_1):
     # plt.show()
     # #
     os.makedirs('./result/val/', exist_ok=True)  # create dir
-    plt.savefig('./result/val/' + fn_1 + '.png')
+    plt.savefig('./result/val/epoch{}_'.format(epoch) + fn_1 + '.png')
     plt.subplot(1, 2, 1)
     plt.cla()
     plt.subplot(1, 2, 2)
@@ -154,10 +155,9 @@ def eval_epoch(val_loader, model, model_fn, epoch):
                 fn_0 = file_name[0][:-1] + '0'
                 fn_1 = file_name[0][:-1] + '1'
                 fn_2 = file_name[0][:-1] + '2'
-                if epoch!=0: os.removedirs('./result/val/')
-                vis_pred(render_img_left, kp_img_pred_lt, kp_img_gt_lt, raw_left, fn_0)
-                vis_pred(render_img_front, kp_img_pred_ft, kp_img_gt_ft, raw_front, fn_1)
-                vis_pred(render_img_right, kp_img_pred_rt, kp_img_gt_rt, raw_right, fn_2)
+                vis_pred(render_img_left, kp_img_pred_lt, kp_img_gt_lt, raw_left, fn_0, epoch)
+                vis_pred(render_img_front, kp_img_pred_ft, kp_img_gt_ft, raw_front, fn_1, epoch)
+                vis_pred(render_img_right, kp_img_pred_rt, kp_img_gt_rt, raw_right, fn_2, epoch)
 
             # #average batch loss, time for print
             for k, v in meter_dict.items():
