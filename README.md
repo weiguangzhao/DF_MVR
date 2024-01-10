@@ -5,7 +5,9 @@
 ###### Landmarks: the blue dot is groundtruth
 ![avatar](./doc/example_lm.jpeg#pic_center)
 
-
+- [x] Release training and testing code of DF_MVR;
+- [x] Release pretrained weight for pixel face dataset;
+- [ ] Release pretrained weight for custom data;
 #### Environment
 RTX 3090 & RTX 2080 Ti  <br>
 For 3090: We recommend CUDA 11.1 & Python v3.8.10  & Pytorch 1.9.0 
