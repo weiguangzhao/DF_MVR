@@ -91,6 +91,10 @@ Download our newest DF_MVR pretrain pth [000000279.pth](https://drive.google.com
     
     python test_pixel_face
 
+#### Test Pixel Face Samples
+
+    python test_sample.py
+
 ## Citation
 If you find this work useful in your research, please cite:
 ```
