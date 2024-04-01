@@ -1,0 +1,8 @@
+matplotlib
+tensorboardX
+pyyaml
+h5py
+SharedArray
+scipy
+mtcnn
+face-alignment
