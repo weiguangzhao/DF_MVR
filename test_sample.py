@@ -22,12 +22,14 @@ from dataset.pixel_face.dataset_preprocess import get_face_mask
 
 def save_pred(preds, save_path):
     face_shape_ft = preds['face_shape_ft']
+    face_texture = preds['face_texture']
     face_model = Face3D()
 
     # # save 3d obj
     face_obj = face_model.facemodel.cell
     vertices_img_obj = face_shape_ft[0, ...].detach().cpu().numpy()
     vertices_img_color_obj = np.ones_like(vertices_img_obj)*127.5
+    # vertices_img_color_obj = face_texture[0, :, :].detach().cpu().numpy() * 255.0
     save_obj(vertices_img_obj, vertices_img_color_obj, face_obj+1, save_path)
     pass
 
