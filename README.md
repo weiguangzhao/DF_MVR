@@ -1,4 +1,4 @@
-## From 2D images to 3D model: Weakly Supervised Multi-View Face Reconstruction with Deep Fusion
+## [ICME2025] From 2D images to 3D model: Weakly Supervised Multi-View Face Reconstruction with Deep Fusion
 ##### Multi-view reconstruction with 3DMM texture
 ![avatar](./doc/example.jpeg#pic_center)
 
@@ -100,10 +100,10 @@ Download our newest DF_MVR pretrain pth [000000279.pth](https://drive.google.com
 ## Citation
 If you find this work useful in your research, please cite:
 ```
-@article{zhao20222d,
+@inproceedings{zhao20252d,
   title={From 2D Images to 3D Model: Weakly Supervised Multi-View Face Reconstruction with Deep Fusion},
-  author={Zhao, Weiguang and Yang, Chaolong and Ye, Jianan and Yan, Yuyao and Yang, Xi and Huang, Kaizhu},
-  journal={arXiv preprint arXiv:2204.03842},
-  year={2022}
+  author={Zhao, Weiguang and Yang, Chaolong and Ye, Jianan and Zhang, Rui and Yan, Yuyao and Yang, Xi and Dong, Bin and Hussain, Amir and Huang, Kaizhu},
+  booktitle={IEEE International Conference on Multimedia and Expo (ICME)},
+  year={2025}
 }
 ```
